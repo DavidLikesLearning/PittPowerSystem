@@ -1,7 +1,8 @@
-# Simple Circuit Simulator - Milestone 5 Report
+# Simple Circuit Simulator 
 ## Class Description and Architecture Documentation
 
 ---
+AI generated
 
 ## 1. Project Overview
 
@@ -282,6 +283,8 @@ $ I = (V_A - V_B) \cdot G_{series} $
 
 Load equivalent resistance:
 $ R_{load} = \frac{V_{load,nominal}^2}{P_{load}} = \frac{100^2}{2000} = \frac{10000}{2000} = 5 \text{ Ω} $
+* note that we assume 100V for the nominal voltage at load
+
 
 Load conductance:
 $ G_{load} = \frac{1}{R_{load}} = \frac{1}{5} = 0.2 \text{ S} $
@@ -343,9 +346,3 @@ Verification: $ P_{source} = P_{actual} + P_{series} $ (500 + 500 = 1000 W) ✓
 - **Encapsulation**: Methods like `calc_g()` encapsulate internal calculation logic
 
 ---
-
-## 7. Conclusion
-
-The Simple Circuit Simulator demonstrates fundamental object-oriented design principles applied to electrical circuit analysis. By decomposing the problem into six distinct classes, each with well-defined responsibilities, the implementation achieves clarity, maintainability, and extensibility. The architecture supports educational objectives by making circuit analysis algorithms explicit and understandable, while the object-oriented structure provides a foundation for future enhancements and more complex circuit topologies.
-
-The class hierarchy and inter-component relationships establish a clear separation between circuit modeling (Elements), circuit management (Circuit), and circuit analysis (Solution), enabling students to understand both the electrical principles and software engineering best practices.
