@@ -63,9 +63,9 @@ The techniques employed in this simulator are foundational to power systems anal
 **Mathematical Foundation**:
 Conductance is calculated using Ohm's Law principles:
 
-\( g = \frac{1}{r} \)
+$ g = \frac{1}{r} $
 
-where \( g \) is conductance in siemens and \( r \) is resistance in ohms.
+where $ g $ is conductance in siemens and $ r $ is resistance in ohms.
 
 **Implementation Notes**:
 - The resistor is a two-terminal element connecting two buses
@@ -95,11 +95,11 @@ where \( g \) is conductance in siemens and \( r \) is resistance in ohms.
 **Mathematical Foundation**:
 For a constant impedance load:
 
-\( r = \frac{v^2}{p} \)
+$ $r = \frac{v^2}{p} $$
 
-\( g = \frac{1}{r} = \frac{p}{v^2} \)
+$ $g = \frac{1}{r} = \frac{p}{v^2} $$
 
-where \( p \) is power, \( v \) is voltage, \( r \) is equivalent resistance, and \( g \) is equivalent conductance.
+where $ p $ is power, $ v $ is voltage, $ r $ is equivalent resistance, and $ g $ is equivalent conductance.
 
 **Implementation Notes**:
 - Load elements are modeled as constant impedance, meaning resistance remains constant regardless of actual operating voltage
@@ -228,36 +228,36 @@ Solution (1)
 ## 4. Key Algorithms and Equations
 
 ### 4.1 Ohm's Law
-\[ V = I \cdot R \]
+$ V = I \cdot R$ 
 
-\[ I = V \cdot G \]
+$ I = V \cdot G $
 
-where \( V \) is voltage, \( I \) is current, \( R \) is resistance, and \( G \) is conductance.
+where $V $ is voltage, $I$ is current,  $R$ is resistance, and $G$ is conductance.
 
 ### 4.2 Power-Voltage Relationship
-\[ P = V \cdot I = \frac{V^2}{R} = V^2 \cdot G \]
+$ P = V \cdot I = \frac{V^2}{R} = V^2 \cdot G $
 
 For constant impedance loads:
-\[ R = \frac{V^2}{P} \]
+$ R = \frac{V^2}{P} $
 
 ### 4.3 Conductance Calculation
-\[ G = \frac{1}{R} \]
+$ G = \frac{1}{R} $
 
 For loads:
-\[ G = \frac{P}{V^2} \]
+$ G = \frac{P}{V^2} $
 
 ### 4.4 Kirchhoff's Voltage Law (KVL)
 The sum of voltages around any closed loop in a circuit equals zero:
-\[ \sum V = 0 \]
+$ \sum V = 0 $
 
 ### 4.5 Nodal Analysis
 For the simple circuit configuration, the voltage at bus B is determined by:
-\[ V_B = V_A \cdot \frac{G_{load}}{G_{series} + G_{load}} \]
+$ V_B = V_A \cdot \frac{G_{load}}{G_{series} + G_{load}} $
 
-where \( V_A \) is the source voltage, \( G_{series} \) is the conductance of the series resistor, and \( G_{load} \) is the conductance of the load.
+where $ V_A $ is the source voltage, $ G_{series} $ is the conductance of the series resistor, and $ G_{load} $ is the conductance of the load.
 
 ### 4.6 Circuit Current
-\[ I = (V_A - V_B) \cdot G_{series} \]
+$ I = (V_A - V_B) \cdot G_{series} $
 
 ---
 
@@ -271,33 +271,33 @@ where \( V_A \) is the source voltage, \( G_{series} \) is the conductance of th
 - Load: 2000 W rated at 100 V connected to bus B
 
 **Known Values**:
-- \( V_A = 100 \) V
-- \( R_{series} = 5 \) Ω
-- \( P_{load} = 2000 \) W
-- \( V_{load,nominal} = 100 \) V
+- $ V_A = 100 $ V
+- $ R_{series} = 5 $ Ω
+- $ P_{load} = 2000 $ W
+- $ V_{load,nominal} = 100 $ V
 
 ### Solution Process
 
 **Step 1: Calculate Conductances**
 
 Load equivalent resistance:
-\[ R_{load} = \frac{V_{load,nominal}^2}{P_{load}} = \frac{100^2}{2000} = \frac{10000}{2000} = 5 \text{ Ω} \]
+$ R_{load} = \frac{V_{load,nominal}^2}{P_{load}} = \frac{100^2}{2000} = \frac{10000}{2000} = 5 \text{ Ω} $
 
 Load conductance:
-\[ G_{load} = \frac{1}{R_{load}} = \frac{1}{5} = 0.2 \text{ S} \]
+$ G_{load} = \frac{1}{R_{load}} = \frac{1}{5} = 0.2 \text{ S} $
 
 Series resistor conductance:
-\[ G_{series} = \frac{1}{R_{series}} = \frac{1}{5} = 0.2 \text{ S} \]
+$ G_{series} = \frac{1}{R_{series}} = \frac{1}{5} = 0.2 \text{ S} $
 
 **Step 2: Calculate Bus B Voltage**
 
 Using voltage divider:
-\[ V_B = V_A \cdot \frac{G_{load}}{G_{series} + G_{load}} = 100 \cdot \frac{0.2}{0.2 + 0.2} = 100 \cdot \frac{0.2}{0.4} = 100 \cdot 0.5 = 50.0 \text{ V} \]
+$ V_B = V_A \cdot \frac{G_{load}}{G_{series} + G_{load}} = 100 \cdot \frac{0.2}{0.2 + 0.2} = 100 \cdot \frac{0.2}{0.4} = 100 \cdot 0.5 = 50.0 \text{ V} $
 
 **Step 3: Calculate Circuit Current**
 
 Using Ohm's Law:
-\[ I = (V_A - V_B) \cdot G_{series} = (100 - 50.0) \cdot 0.2 = 50.0 \cdot 0.2 = 10.0 \text{ A} \]
+$ I = (V_A - V_B) \cdot G_{series} = (100 - 50.0) \cdot 0.2 = 50.0 \cdot 0.2 = 10.0 \text{ A} $
 
 ### Expected Output
 
@@ -310,15 +310,15 @@ Circuit current = 10.0 A
 ### Verification
 
 Power consumed by load at operating voltage:
-\[ P_{actual} = \frac{V_B^2}{R_{load}} = \frac{50.0^2}{5} = \frac{2500}{5} = 500 \text{ W} \]
+$ P_{actual} = \frac{V_B^2}{R_{load}} = \frac{50.0^2}{5} = \frac{2500}{5} = 500 \text{ W} $
 
 Power dissipated in series resistor:
-\[ P_{series} = I^2 \cdot R_{series} = 10.0^2 \cdot 5 = 100 \cdot 5 = 500 \text{ W} \]
+$ P_{series} = I^2 \cdot R_{series} = 10.0^2 \cdot 5 = 100 \cdot 5 = 500 \text{ W} $
 
 Power supplied by source:
-\[ P_{source} = V_A \cdot I = 100 \cdot 10.0 = 1000 \text{ W} \]
+$ P_{source} = V_A \cdot I = 100 \cdot 10.0 = 1000 \text{ W} $
 
-Verification: \( P_{source} = P_{actual} + P_{series} \) (500 + 500 = 1000 W) ✓
+Verification: $ P_{source} = P_{actual} + P_{series} $ (500 + 500 = 1000 W) ✓
 
 ---
 
